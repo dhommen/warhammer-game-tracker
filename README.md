@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# ⚔️ Warhammer 40K Game Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A static web app for tracking 10th edition Warhammer 40K games with automatic round management and quality-of-life features.
 
-Currently, two official plugins are available:
+## 🎮 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**[https://wh40k.02.dho-studio.de](https://wh40k.02.dho-studio.de)**
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Battle Round Tracking:** 1-5 rounds with visual counter
+- **Command Points (CP):** Auto-gain 1 CP per round
+- **Victory Points (VP):** Dual player counters
+- **Persistent State:** Auto-save to localStorage
+- **Mobile-Friendly:** Responsive design for gaming tables
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 18 + TypeScript
+- Vite (build tool)
+- Tailwind CSS
+- localStorage for persistence
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Development
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+```bash
+# Install dependencies
+npm install
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Deployment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Deploy to VPS with one command:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+./deploy.sh
 ```
+
+This will:
+1. Build the project locally
+2. Push to GitHub
+3. Pull on VPS and rebuild
+4. Live at `https://wh40k.02.dho-studio.de`
+
+## 🎯 Roadmap
+
+- [ ] Phase tracker (Command → Movement → Shooting → Charge → Fight → Morale)
+- [ ] Turn switcher (Player 1 ↔ Player 2)
+- [ ] Undo button
+- [ ] Game history log
+- [ ] Dark theme refinements
+- [ ] PWA support (offline, installable)
+
+## 📄 License
+
+MIT
